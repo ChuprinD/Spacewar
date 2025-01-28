@@ -11,4 +11,3 @@ func _on_player1_missile_fired(obj,_group_to_kill):
 	$Missiles.add_child(m)
 	m.scale = Vector2.ONE * 0.3
 	m.transform = obj.transform
-	m.group_to_kill = _group_to_kill

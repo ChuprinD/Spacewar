@@ -5,6 +5,8 @@ extends Node2D
 func _enter_tree():
 	$SpaceCrafts/PlayerCraft1.connect("missile_fired", _on_player1_missile_fired)
 	$SpaceCrafts/PlayerCraft1.connect("death", _on_player1_dead)
+	$SpaceCrafts/PlayerCraft2.connect("missile_fired", _on_player2_missile_fired)
+	$SpaceCrafts/PlayerCraft2.connect("death", _on_player2_dead)
 	
 func _on_player1_missile_fired(obj):
 	var m = missile_scn.instantiate()
