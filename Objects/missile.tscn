@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://iu6ced8bv08t"]
+[gd_scene load_steps=7 format=3 uid="uid://iu6ced8bv08t"]
 
 [ext_resource type="Texture2D" uid="uid://dy0wrtjasqfe7" path="res://Assets/laser-bolts.png" id="1_ct62v"]
+[ext_resource type="Script" path="res://Scripts/missle.gd" id="1_ymmdx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ku6b8"]
 atlas = ExtResource("1_ct62v")
@@ -28,8 +29,11 @@ animations = [{
 radius = 4.0
 
 [node name="Node2D" type="Area2D"]
+rotation = 1.5708
+script = ExtResource("1_ymmdx")
 
 [node name="Node2D" type="AnimatedSprite2D" parent="."]
+rotation = -6.28319
 sprite_frames = SubResource("SpriteFrames_1vahh")
 animation = &"fire"
 frame = 1

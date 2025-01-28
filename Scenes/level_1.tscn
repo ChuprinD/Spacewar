@@ -1,10 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://u6ndd8ae1jss"]
+[gd_scene load_steps=3 format=3 uid="uid://u6ndd8ae1jss"]
 
+[ext_resource type="Script" path="res://Scripts/levelManager.gd" id="1_15ci2"]
 [ext_resource type="PackedScene" uid="uid://c6tfjqnq2lmgf" path="res://Objects/player1.tscn" id="1_pnqo8"]
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_15ci2")
 
 [node name="SpaceCrafts" type="Node2D" parent="."]
 
 [node name="PlayerCraft1" parent="SpaceCrafts" instance=ExtResource("1_pnqo8")]
-position = Vector2(257, 192)
+position = Vector2(695, 531)
+
+[node name="Missiles" type="Node2D" parent="."]
