@@ -13,11 +13,23 @@ func _on_player1_missile_fired(obj):
 	m.transform = obj.transform
 	m.rotation_degrees  = obj.rotation_degrees - 90
 	
+func _on_player2_missile_fired(obj):
+	var n = missile_scn.instantiate()
+	$Missiles.add_child(n)
+	n.scale = Vector2.ONE * 0.3
+	n.transform = obj.transform
+	n.rotation_degrees = obj.rotation_degrees - 90
+	
 func _on_player1_dead(obj, _transform):
 	$Explosions.add_child(obj)
 	obj.transform = _transform
 	$Timer.start()
 	
+func _on_player2_dead(obj, _transform):
+	$Explosions.add_child(obj)
+	obj.transform = _transform
+	$Timer.start()
+		
 func _on_timer_timeout():
 	get_tree().reload_current_scene()
 	
