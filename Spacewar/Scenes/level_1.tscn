@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://u6ndd8ae1jss"]
+
+[ext_resource type="PackedScene" uid="uid://c6tfjqnq2lmgf" path="res://Objects/player1.tscn" id="1_pnqo8"]
+[ext_resource type="Script" path="res://Scenes/mesh_instance_2d.gd" id="2_r4d0n"]
+[ext_resource type="Texture2D" uid="uid://bjh3ah7b4pa8c" path="res://Assets/Asteroid1.png" id="3_lnsob"]
+[ext_resource type="Texture2D" uid="uid://ccb13c38ac26p" path="res://Assets/Asteroid2.png" id="4_ijgeg"]
+[ext_resource type="Texture2D" uid="uid://dbwr0bigd1ovw" path="res://Assets/Asteroid3.png" id="5_ukchw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gl6qn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_lnsob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lnsob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ijgeg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ukchw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_axgp3"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="SpaceCrafts" type="Node2D" parent="."]
+
+[node name="PlayerCraft1" parent="SpaceCrafts" instance=ExtResource("1_pnqo8")]
+position = Vector2(257, 192)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+script = ExtResource("2_r4d0n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MeshInstance2D"]
+sprite_frames = SubResource("SpriteFrames_gl6qn")
+frame_progress = 0.105967
+
+[node name="RigidBody2D" type="RigidBody2D" parent="MeshInstance2D/AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeshInstance2D/AnimatedSprite2D/RigidBody2D"]
+shape = SubResource("CircleShape2D_axgp3")
