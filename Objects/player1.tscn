@@ -1,11 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://c6tfjqnq2lmgf"]
+[gd_scene load_steps=16 format=3 uid="uid://c6tfjqnq2lmgf"]
 
 [ext_resource type="Script" path="res://Scripts/player1.gd" id="1_bwdd8"]
 [ext_resource type="Texture2D" uid="uid://q5iqqe71s4nk" path="res://Assets/ship.png" id="1_jghvd"]
-[ext_resource type="Script" path="res://Objects/player_1.gd" id="1_qey1s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1tpky"]
-radius = 9.0
+radius = 8.01561
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ord3"]
 atlas = ExtResource("1_jghvd")
@@ -81,25 +80,34 @@ animations = [{
 "texture": SubResource("AtlasTexture_o1k0g")
 }],
 "loop": true,
-"name": &"thurst",
+"name": &"thrust",
 "speed": 10.0
 }]
 
-[node name="PlayerCraft1" type="CharacterBody2D"]
-scale = Vector2(3, 3)
+[sub_resource type="CircleShape2D" id="CircleShape2D_7vc8d"]
+radius = 9.01388
+
+[node name="PlayerCraft1" type="CharacterBody2D" groups=["player1", "space_object"]]
+top_level = true
+scale = Vector2(2, 2)
 script = ExtResource("1_bwdd8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -3)
+position = Vector2(0, -4.5)
 shape = SubResource("CircleShape2D_1tpky")
 
-[node name="Thurst" type="AnimatedSprite2D" parent="."]
+[node name="Thrust" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hhe7m")
-animation = &"thurst"
-frame_progress = 0.77299
+animation = &"thrust"
 
 [node name="Target" type="Node2D" parent="."]
 position = Vector2(0, -12)
 rotation = 1.5708
 
 [node name="Body" type="Node2D" parent="."]
+
+[node name="DeathZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_7vc8d")
