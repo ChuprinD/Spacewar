@@ -1,48 +1,48 @@
-[gd_scene load_steps=14 format=3 uid="uid://b64rsbxv1rglb"]
+[gd_scene load_steps=14 format=3 uid="uid://c6tfjqnq2lmgf"]
 
-[ext_resource type="Texture2D" uid="uid://q5iqqe71s4nk" path="res://Assets/ship.png" id="1_y4eh8"]
+[ext_resource type="Texture2D" uid="uid://q5iqqe71s4nk" path="res://Assets/ship.png" id="1_jghvd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1tpky"]
 radius = 9.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ord3"]
-atlas = ExtResource("1_y4eh8")
+atlas = ExtResource("1_jghvd")
 region = Rect2(0, 0, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uk18d"]
-atlas = ExtResource("1_y4eh8")
+atlas = ExtResource("1_jghvd")
 region = Rect2(16, 0, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d7d1d"]
-atlas = ExtResource("1_y4eh8")
+atlas = ExtResource("1_jghvd")
 region = Rect2(32, 0, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fo7di"]
-atlas = ExtResource("1_y4eh8")
+atlas = ExtResource("1_jghvd")
 region = Rect2(48, 0, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6t167"]
-atlas = ExtResource("1_y4eh8")
+atlas = ExtResource("1_jghvd")
 region = Rect2(64, 0, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vv3wv"]
-atlas = ExtResource("1_y4eh8")
+atlas = ExtResource("1_jghvd")
 region = Rect2(0, 24, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xoj5d"]
-atlas = ExtResource("1_y4eh8")
+atlas = ExtResource("1_jghvd")
 region = Rect2(16, 24, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_66hhb"]
-atlas = ExtResource("1_y4eh8")
+atlas = ExtResource("1_jghvd")
 region = Rect2(32, 24, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3t1rx"]
-atlas = ExtResource("1_y4eh8")
+atlas = ExtResource("1_jghvd")
 region = Rect2(48, 24, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o1k0g"]
-atlas = ExtResource("1_y4eh8")
+atlas = ExtResource("1_jghvd")
 region = Rect2(64, 24, 16, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hhe7m"]
@@ -92,6 +92,7 @@ shape = SubResource("CircleShape2D_1tpky")
 [node name="Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hhe7m")
 animation = &"thurst"
-frame_progress = 0.482958
+frame_progress = 0.0836499
 
 [node name="Target" type="Node2D" parent="."]
+position = Vector2(0, -13)
