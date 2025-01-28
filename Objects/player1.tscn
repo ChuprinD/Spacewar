@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://c6tfjqnq2lmgf"]
+[gd_scene load_steps=15 format=3 uid="uid://c6tfjqnq2lmgf"]
 
 [ext_resource type="Texture2D" uid="uid://q5iqqe71s4nk" path="res://Assets/ship.png" id="1_jghvd"]
+[ext_resource type="Script" path="res://Objects/player_1.gd" id="1_qey1s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1tpky"]
 radius = 9.0
@@ -84,6 +85,7 @@ animations = [{
 }]
 
 [node name="PlayerCraft1" type="CharacterBody2D"]
+script = ExtResource("1_qey1s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)
@@ -92,7 +94,7 @@ shape = SubResource("CircleShape2D_1tpky")
 [node name="Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hhe7m")
 animation = &"thurst"
-frame_progress = 0.0836499
+frame_progress = 0.76212
 
 [node name="Target" type="Node2D" parent="."]
 position = Vector2(0, -13)
