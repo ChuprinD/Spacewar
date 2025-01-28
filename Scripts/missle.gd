@@ -5,7 +5,7 @@ extends Area2D
 
 @onready var screen_size = get_viewport().size
 @onready var starting_position: Vector2 = position 
-# Called when the node enters the scene tree for the first time.
+
 func _physics_process(delta: float) -> void:
 		position += transform.x * speed * delta	
 		

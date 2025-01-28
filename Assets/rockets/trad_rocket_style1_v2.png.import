@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hkt3or57psvh"
-path="res://.godot/imported/enemy-medium.png-93d1d19a55570b1cc7c7892d55a5a44e.ctex"
+uid="uid://dxkogcvy3doeu"
+path="res://.godot/imported/trad_rocket_style1_v2.png-9c8c1cfed315da728c396f30f2795a0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/enemy-medium.png"
-dest_files=["res://.godot/imported/enemy-medium.png-93d1d19a55570b1cc7c7892d55a5a44e.ctex"]
+source_file="res://Assets/rockets/trad_rocket_style1_v2.png"
+dest_files=["res://.godot/imported/trad_rocket_style1_v2.png-9c8c1cfed315da728c396f30f2795a0e.ctex"]
 
 [params]
 

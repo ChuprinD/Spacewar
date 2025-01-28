@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy0wrtjasqfe7"
-path="res://.godot/imported/laser-bolts.png-1698360bad7dd87ad45a9ff0ef44ffde.ctex"
+uid="uid://f6w6e85uuat4"
+path="res://.godot/imported/trad_rocket_style2_v2.png-55bbab82c2c573fe091859ad25fc0ae7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/laser-bolts.png"
-dest_files=["res://.godot/imported/laser-bolts.png-1698360bad7dd87ad45a9ff0ef44ffde.ctex"]
+source_file="res://Assets/rockets/trad_rocket_style2_v2.png"
+dest_files=["res://.godot/imported/trad_rocket_style2_v2.png-55bbab82c2c573fe091859ad25fc0ae7.ctex"]
 
 [params]
 

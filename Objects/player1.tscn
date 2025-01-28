@@ -1,107 +1,72 @@
-[gd_scene load_steps=16 format=3 uid="uid://c6tfjqnq2lmgf"]
+[gd_scene load_steps=10 format=3 uid="uid://c6tfjqnq2lmgf"]
 
 [ext_resource type="Script" path="res://Scripts/player1.gd" id="1_bwdd8"]
-[ext_resource type="Texture2D" uid="uid://q5iqqe71s4nk" path="res://Assets/ship.png" id="1_jghvd"]
+[ext_resource type="Texture2D" uid="uid://dh2vpa3m6li6f" path="res://Assets/rockets/jet_style1_v1.png" id="2_pr2hm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1tpky"]
-radius = 8.01561
+radius = 28.5044
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7ord3"]
-atlas = ExtResource("1_jghvd")
-region = Rect2(0, 0, 16, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5vho"]
+atlas = ExtResource("2_pr2hm")
+region = Rect2(0, 0, 127, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uk18d"]
-atlas = ExtResource("1_jghvd")
-region = Rect2(16, 0, 16, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6cmh"]
+atlas = ExtResource("2_pr2hm")
+region = Rect2(133, 0, 126, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d7d1d"]
-atlas = ExtResource("1_jghvd")
-region = Rect2(32, 0, 16, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_dw6h4"]
+atlas = ExtResource("2_pr2hm")
+region = Rect2(265, 0, 126, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fo7di"]
-atlas = ExtResource("1_jghvd")
-region = Rect2(48, 0, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6t167"]
-atlas = ExtResource("1_jghvd")
-region = Rect2(64, 0, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vv3wv"]
-atlas = ExtResource("1_jghvd")
-region = Rect2(0, 24, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xoj5d"]
-atlas = ExtResource("1_jghvd")
-region = Rect2(16, 24, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_66hhb"]
-atlas = ExtResource("1_jghvd")
-region = Rect2(32, 24, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3t1rx"]
-atlas = ExtResource("1_jghvd")
-region = Rect2(48, 24, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o1k0g"]
-atlas = ExtResource("1_jghvd")
-region = Rect2(64, 24, 16, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ykqn"]
+atlas = ExtResource("2_pr2hm")
+region = Rect2(397, 0, 126, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hhe7m"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7ord3")
+"texture": SubResource("AtlasTexture_f5vho")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6cmh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uk18d")
+"texture": SubResource("AtlasTexture_dw6h4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d7d1d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fo7di")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6t167")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vv3wv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xoj5d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_66hhb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3t1rx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o1k0g")
+"texture": SubResource("AtlasTexture_6ykqn")
 }],
 "loop": true,
 "name": &"thrust",
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7vc8d"]
-radius = 9.01388
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s1bqv"]
+radius = 29.5
+height = 67.0
 
 [node name="PlayerCraft1" type="CharacterBody2D" groups=["player1", "space_object"]]
 top_level = true
-scale = Vector2(2, 2)
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_bwdd8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4.5)
+position = Vector2(-0.5, -13.5)
 shape = SubResource("CircleShape2D_1tpky")
 
 [node name="Thrust" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -17)
 sprite_frames = SubResource("SpriteFrames_hhe7m")
-animation = &"thrust"
+animation = &"idle"
 
 [node name="Target" type="Node2D" parent="."]
-position = Vector2(0, -12)
+position = Vector2(0, -46)
 rotation = 1.5708
 
 [node name="Body" type="Node2D" parent="."]
@@ -109,5 +74,5 @@ rotation = 1.5708
 [node name="DeathZone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
-position = Vector2(0, -4)
-shape = SubResource("CircleShape2D_7vc8d")
+position = Vector2(0, -11)
+shape = SubResource("CapsuleShape2D_s1bqv")

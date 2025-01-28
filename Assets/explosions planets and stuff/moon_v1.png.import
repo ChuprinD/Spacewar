@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd66obbyiigtk"
-path="res://.godot/imported/power-up.png-f1a48297cbd7cfd6614ba514f5c15bb5.ctex"
+uid="uid://dtkr03ijqe6w0"
+path="res://.godot/imported/moon_v1.png-29f6f5611bf09ec770e751f492b9d534.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/power-up.png"
-dest_files=["res://.godot/imported/power-up.png-f1a48297cbd7cfd6614ba514f5c15bb5.ctex"]
+source_file="res://Assets/explosions planets and stuff/moon_v1.png"
+dest_files=["res://.godot/imported/moon_v1.png-29f6f5611bf09ec770e751f492b9d534.ctex"]
 
 [params]
 

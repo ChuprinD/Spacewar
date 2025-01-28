@@ -1,42 +1,57 @@
-[gd_scene load_steps=7 format=3 uid="uid://iu6ced8bv08t"]
+[gd_scene load_steps=9 format=3 uid="uid://iu6ced8bv08t"]
 
-[ext_resource type="Texture2D" uid="uid://dy0wrtjasqfe7" path="res://Assets/laser-bolts.png" id="1_ct62v"]
 [ext_resource type="Script" path="res://Scripts/missle.gd" id="1_ymmdx"]
+[ext_resource type="Texture2D" uid="uid://ceatkn4fsc1vt" path="res://Assets/explosions planets and stuff/bullet_v1.png" id="2_t5bm8"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ku6b8"]
-atlas = ExtResource("1_ct62v")
-region = Rect2(16, 16, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrng0"]
+atlas = ExtResource("2_t5bm8")
+region = Rect2(0, 0, 126, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rt6oi"]
-atlas = ExtResource("1_ct62v")
-region = Rect2(0, 16, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt0u6"]
+atlas = ExtResource("2_t5bm8")
+region = Rect2(132, 0, 126, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56g1d"]
+atlas = ExtResource("2_t5bm8")
+region = Rect2(264, 0, 126, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lltsf"]
+atlas = ExtResource("2_t5bm8")
+region = Rect2(396, 0, 126, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1vahh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ku6b8")
+"texture": SubResource("AtlasTexture_yrng0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rt6oi")
+"texture": SubResource("AtlasTexture_bt0u6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56g1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lltsf")
 }],
 "loop": true,
 "name": &"fire",
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5huys"]
-radius = 4.12311
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bt4w3"]
+size = Vector2(14, 6)
 
 [node name="Node2D" type="Area2D"]
 script = ExtResource("1_ymmdx")
 
 [node name="Node2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(6, 0)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_1vahh")
 animation = &"fire"
-frame_progress = 0.702342
+frame_progress = 0.52034
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, -2)
-shape = SubResource("CircleShape2D_5huys")
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_bt4w3")

@@ -5,14 +5,22 @@
 [ext_resource type="PackedScene" uid="uid://k1qt8g00t4m8" path="res://Objects/planet.tscn" id="3_mjq3i"]
 
 [node name="Level1" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_15ci2")
 
 [node name="SpaceCrafts" type="Node2D" parent="."]
 
 [node name="PlayerCraft1" parent="SpaceCrafts" instance=ExtResource("1_pnqo8")]
-position = Vector2(76, 589)
+position = Vector2(93, 607)
 
 [node name="Missiles" type="Node2D" parent="."]
 
 [node name="Planet" parent="." instance=ExtResource("3_mjq3i")]
-position = Vector2(579, 290)
+position = Vector2(552, 305)
+
+[node name="Explosions" type="Node2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

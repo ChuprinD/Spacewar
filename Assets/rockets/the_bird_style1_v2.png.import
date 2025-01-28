@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://q5iqqe71s4nk"
-path="res://.godot/imported/ship.png-925640061b5e3260a2dfe6b5d95f2dc9.ctex"
+uid="uid://cbjtwb6f87ij6"
+path="res://.godot/imported/the_bird_style1_v2.png-a0025f5a9ddc3b1f9cb65969ddf2f382.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ship.png"
-dest_files=["res://.godot/imported/ship.png-925640061b5e3260a2dfe6b5d95f2dc9.ctex"]
+source_file="res://Assets/rockets/the_bird_style1_v2.png"
+dest_files=["res://.godot/imported/the_bird_style1_v2.png-a0025f5a9ddc3b1f9cb65969ddf2f382.ctex"]
 
 [params]
 

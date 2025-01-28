@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8fa3uuwfkb4t"
-path="res://.godot/imported/Alpine_03-256x256.png-1499dbffc0c53e3f1156c8244dcd9782.ctex"
+uid="uid://83dqlyhvpnfs"
+path="res://.godot/imported/the_bird_style2_v2.png-ff501f9e16a04d3d35494884a20476d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Alpine_03-256x256.png"
-dest_files=["res://.godot/imported/Alpine_03-256x256.png-1499dbffc0c53e3f1156c8244dcd9782.ctex"]
+source_file="res://Assets/rockets/the_bird_style2_v2.png"
+dest_files=["res://.godot/imported/the_bird_style2_v2.png-ff501f9e16a04d3d35494884a20476d4.ctex"]
 
 [params]
 

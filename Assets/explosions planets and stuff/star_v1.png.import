@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1a6aee1knip0"
-path="res://.godot/imported/enemy-big.png-b353d4895f782137f92fd7a2acc8755f.ctex"
+uid="uid://f7r8uney268i"
+path="res://.godot/imported/star_v1.png-bad3659d5f0d35e08b1d81a7f0438d66.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/enemy-big.png"
-dest_files=["res://.godot/imported/enemy-big.png-b353d4895f782137f92fd7a2acc8755f.ctex"]
+source_file="res://Assets/explosions planets and stuff/star_v1.png"
+dest_files=["res://.godot/imported/star_v1.png-bad3659d5f0d35e08b1d81a7f0438d66.ctex"]
 
 [params]
 

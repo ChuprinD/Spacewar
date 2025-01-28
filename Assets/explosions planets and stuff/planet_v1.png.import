@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx42ddgh6pmxg"
-path="res://.godot/imported/Alpine_02-256x256.png-b3a005e70a656751fcb8908209f5fbf7.ctex"
+uid="uid://cnxvxjrt4xer8"
+path="res://.godot/imported/planet_v1.png-018196659079a73a6e652acca88858a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Alpine_02-256x256.png"
-dest_files=["res://.godot/imported/Alpine_02-256x256.png-b3a005e70a656751fcb8908209f5fbf7.ctex"]
+source_file="res://Assets/explosions planets and stuff/planet_v1.png"
+dest_files=["res://.godot/imported/planet_v1.png-018196659079a73a6e652acca88858a7.ctex"]
 
 [params]
 
