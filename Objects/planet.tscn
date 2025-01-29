@@ -1,17 +1,38 @@
-[gd_scene load_steps=11 format=3 uid="uid://k1qt8g00t4m8"]
+[gd_scene load_steps=14 format=3 uid="uid://k1qt8g00t4m8"]
 
 [ext_resource type="Script" path="res://Scripts/planet.gd" id="1_06yhg"]
-[ext_resource type="Texture2D" uid="uid://dtkr03ijqe6w0" path="res://Assets/explosions planets and stuff/moon_v1.png" id="2_lwaa1"]
+[ext_resource type="Texture2D" uid="uid://blclpll1p7nmh" path="res://Assets/explosions planets and stuff/planet_spinning_v1.png" id="2_r2lk0"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vj0m4"]
-atlas = ExtResource("2_lwaa1")
-region = Rect2(0, 0, 128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_xljc2"]
+atlas = ExtResource("2_r2lk0")
+region = Rect2(1, 0, 126, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dofuk"]
+atlas = ExtResource("2_r2lk0")
+region = Rect2(133, 0, 126, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwk00"]
+atlas = ExtResource("2_r2lk0")
+region = Rect2(265, 0, 126, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prt04"]
+atlas = ExtResource("2_r2lk0")
+region = Rect2(397, 0, 126, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gfjcw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vj0m4")
+"texture": SubResource("AtlasTexture_xljc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dofuk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwk00")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prt04")
 }],
 "loop": true,
 "name": &"rotation",
@@ -22,7 +43,7 @@ animations = [{
 radius = 51.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kp356"]
-radius = 55.3263
+radius = 58.0345
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4alal"]
 radius = 178.003
@@ -40,14 +61,18 @@ radius = 612.013
 script = ExtResource("1_06yhg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_gfjcw")
 animation = &"rotation"
-frame_progress = 0.278234
+autoplay = "rotation"
+frame_progress = 0.758217
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_msns1")
 
 [node name="DeathZone" type="Area2D" parent="."]
+scale = Vector2(0.5, 0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
 shape = SubResource("CircleShape2D_kp356")

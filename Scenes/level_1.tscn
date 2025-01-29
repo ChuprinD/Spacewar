@@ -1,58 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://u6ndd8ae1jss"]
+[gd_scene load_steps=5 format=3 uid="uid://u6ndd8ae1jss"]
 
 [ext_resource type="Script" path="res://Scripts/levelManager.gd" id="1_15ci2"]
 [ext_resource type="PackedScene" uid="uid://c6tfjqnq2lmgf" path="res://Objects/player1.tscn" id="1_pnqo8"]
-[ext_resource type="Script" path="res://Scripts/player2.gd" id="3_gluve"]
+[ext_resource type="PackedScene" uid="uid://bgskb0p4myv4h" path="res://Objects/player2.tscn" id="3_b21k2"]
 [ext_resource type="PackedScene" uid="uid://k1qt8g00t4m8" path="res://Objects/planet.tscn" id="3_mjq3i"]
-[ext_resource type="Texture2D" uid="uid://bfcdskpd63e5i" path="res://Assets/rockets/the_bird_style1_v2-removebg-preview.png" id="3_rho3b"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_cv72u"]
-radius = 22.0907
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_862pw"]
-atlas = ExtResource("3_rho3b")
-region = Rect2(0, 0, 131, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mbvri"]
-atlas = ExtResource("3_rho3b")
-region = Rect2(131, 0, 131, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kbb0j"]
-atlas = ExtResource("3_rho3b")
-region = Rect2(262, 0, 131, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m81ip"]
-atlas = ExtResource("3_rho3b")
-region = Rect2(393, 0, 131, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_htcit"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_862pw")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mbvri")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kbb0j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m81ip")
-}],
-"loop": true,
-"name": &"thrust",
-"speed": 5.0
-}]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_07x4w"]
-radius = 29.5
-height = 67.0
 
 [node name="Level1" type="Node2D"]
 texture_filter = 1
@@ -62,42 +13,16 @@ script = ExtResource("1_15ci2")
 
 [node name="PlayerCraft1" parent="SpaceCrafts" instance=ExtResource("1_pnqo8")]
 position = Vector2(93, 607)
-
-[node name="PlayerCraft2" type="CharacterBody2D" parent="SpaceCrafts" groups=["player1", "space_object"]]
-position = Vector2(7.62939e-06, 6.10352e-05)
-scale = Vector2(1, 1)
-script = ExtResource("3_gluve")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaceCrafts/PlayerCraft2"]
-position = Vector2(818, 74)
-shape = SubResource("CircleShape2D_cv72u")
-
-[node name="Thrust" type="AnimatedSprite2D" parent="SpaceCrafts/PlayerCraft2"]
-position = Vector2(821, 68)
-scale = Vector2(0.709, 0.674)
-sprite_frames = SubResource("SpriteFrames_htcit")
-animation = &"idle"
-
-[node name="Target" type="Node2D" parent="SpaceCrafts/PlayerCraft2"]
-position = Vector2(0, -46)
 rotation = 1.5708
 
-[node name="Body" type="Node2D" parent="SpaceCrafts/PlayerCraft2"]
-position = Vector2(0, -46)
-rotation = 1.5708
-
-[node name="DeathZone" type="Area2D" parent="SpaceCrafts/PlayerCraft2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaceCrafts/PlayerCraft2/DeathZone"]
-position = Vector2(0, -11)
-shape = SubResource("CapsuleShape2D_07x4w")
+[node name="PlayerCraft2" parent="SpaceCrafts" instance=ExtResource("3_b21k2")]
+position = Vector2(1051, 69)
+rotation = -1.5708
 
 [node name="Missiles" type="Node2D" parent="."]
 position = Vector2(4.54747e-13, 1)
-scale = Vector2(1, 1)
 
 [node name="Planet" parent="." instance=ExtResource("3_mjq3i")]
-visible = false
 position = Vector2(537, 319)
 
 [node name="Explosions" type="Node2D" parent="."]

@@ -2,9 +2,10 @@ extends CharacterBody2D
 
 class_name SpaceCraft
 
-@export var thrust_power: int = 200
+@export var thrust_power: int = 100
 @export var rotation_speed: float = 3
-@export var missiles: int = 500
+@export var missiles: int = 50
+@export var life: int = 3
 @export var max_velocity: Vector2 = Vector2(1000,1000)
 @export var max_thrust_velocity: Vector2 = Vector2(400,400)
 
@@ -21,6 +22,7 @@ var shoot_timer: Timer
 
 signal missile_fired
 signal death
+signal missile_hit
 
 func _ready() -> void:
 	shoot_timer = Timer.new()
@@ -47,12 +49,12 @@ func check_for_screen_presence():
 	position.x = fposmod(position.x, screen_size.x)
 	position.y = fposmod(position.y, screen_size.y)
 	
-func fire():
+func fire(_group_to_kill):
 	if missiles > 0 and can_shoot:
 		missiles -= 1
 		can_shoot = false
 		shoot_timer.start()
-		emit_signal("missile_fired", self)
+		emit_signal("missile_fired", self, _group_to_kill)
 		
 func activate_gravity(_is_gravity_active, _gravity_center, _gravity_power):
 	is_gravity_active = _is_gravity_active
@@ -62,6 +64,12 @@ func activate_gravity(_is_gravity_active, _gravity_center, _gravity_power):
 func calculate_final_velocity(delta):
 	var dir = gravity_center - position
 	velocity += dir.normalized() * gravity_power * delta
+	
+func hit():
+	life -= 1
+	emit_signal("missile_hit")
+	if life <=0 :
+		destroy()
 	
 func destroy():
 	var e = explosion_scn.instantiate()

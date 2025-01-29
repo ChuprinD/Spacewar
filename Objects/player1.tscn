@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c6tfjqnq2lmgf"]
+[gd_scene load_steps=13 format=3 uid="uid://c6tfjqnq2lmgf"]
 
 [ext_resource type="Script" path="res://Scripts/player1.gd" id="1_bwdd8"]
 [ext_resource type="Texture2D" uid="uid://dh2vpa3m6li6f" path="res://Assets/rockets/jet_style1_v1.png" id="2_pr2hm"]
@@ -48,8 +48,44 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s1bqv"]
-radius = 29.5
-height = 67.0
+radius = 38.75
+height = 77.5
+
+[sub_resource type="Animation" id="Animation_22qsd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_upx7q"]
+resource_name = "HitAnimation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3xqfj"]
+_data = {
+"RESET": SubResource("Animation_22qsd"),
+"hit": SubResource("Animation_upx7q")
+}
 
 [node name="PlayerCraft1" type="CharacterBody2D" groups=["player1", "space_object"]]
 top_level = true
@@ -76,3 +112,10 @@ rotation = 1.5708
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
 position = Vector2(0, -11)
 shape = SubResource("CapsuleShape2D_s1bqv")
+
+[node name="HitAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3xqfj")
+}
+
+[connection signal="body_entered" from="DeathZone" to="." method="_on_death_zone_body_entered"]

@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bgskb0p4myv4h"]
+[gd_scene load_steps=15 format=3 uid="uid://bgskb0p4myv4h"]
 
+[ext_resource type="Script" path="res://Scripts/player2.gd" id="1_jsu87"]
 [ext_resource type="Texture2D" uid="uid://cbjtwb6f87ij6" path="res://Assets/rockets/the_bird_style1_v2.png" id="2_5usis"]
 [ext_resource type="Texture2D" uid="uid://bfcdskpd63e5i" path="res://Assets/rockets/the_bird_style1_v2-removebg-preview.png" id="3_v2811"]
-
-[sub_resource type="GDScript" id="GDScript_c1hk6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1tpky"]
 radius = 28.5044
@@ -57,13 +56,49 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s1bqv"]
-radius = 29.5
+radius = 30.0
 height = 67.0
 
-[node name="PlayerCraft1" type="CharacterBody2D" groups=["player1", "space_object"]]
+[sub_resource type="Animation" id="Animation_hf8um"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4ajpo"]
+resource_name = "HitAnimation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tjqr3"]
+_data = {
+"RESET": SubResource("Animation_hf8um"),
+"hit": SubResource("Animation_4ajpo")
+}
+
+[node name="PlayerCraft1" type="CharacterBody2D" groups=["player2", "space_object"]]
 top_level = true
 scale = Vector2(0.8, 0.8)
-script = SubResource("GDScript_c1hk6")
+script = ExtResource("1_jsu87")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3.75, -3.75)
@@ -76,7 +111,7 @@ animation = &"thrust"
 frame_progress = 0.293027
 
 [node name="Target" type="Node2D" parent="."]
-position = Vector2(0, -46)
+position = Vector2(-2.5, -37.5)
 rotation = 1.5708
 
 [node name="Body" type="Node2D" parent="."]
@@ -88,3 +123,10 @@ position = Vector2(112.5, -103.75)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
 position = Vector2(-116.25, 96.25)
 shape = SubResource("CapsuleShape2D_s1bqv")
+
+[node name="HitAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tjqr3")
+}
+
+[connection signal="body_entered" from="DeathZone" to="." method="_on_death_zone_body_entered"]
